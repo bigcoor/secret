@@ -1,0 +1,35 @@
+{
+  "name": "nodebootstraper",
+  "version": "0.0.1",
+  "dependencies": {
+    "mongodb": "latest",
+    "mongoose": "latest",
+    "moment": "latest",
+    "bcrypt": ">= 0.7",
+    "express": "latest",
+    "mongoose-long": "latest",
+    "crypto": "latest",
+    "underscore": "latest",
+    "stylus": "latest",
+    "jade": "latest",
+    "async": "latest",
+    "kaiseki": "latest",
+    "nconf": "latest",
+    "underscore.string": "latest",
+    "ripple-lib": "0.7.x"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "istanbul": "latest",
+    "sinon": "latest",
+    "async": "^0.9.0"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test istanbul test ./node_modules/mocha/bin/_mocha",
+    "watch": "nodemon --exec 'NODE_ENV=test istanbul test ./node_modules/mocha/bin/_mocha --coverage' ."
+  }
+}

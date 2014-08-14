@@ -1,0 +1,104 @@
+doctype html
+html(lang="en-us", ng-app='app')
+  head
+    meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    meta(charset="utf-8")
+    title(Bigcoor 虚拟币基金 Coming Soon)
+    meta(nname="viewport" content="width=device-width, initial-scale=1" rel='stylesheet')
+    link(href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel='stylesheet')
+    link(href="bower_components/font-awesome/css/font-awesome.min.css" rel='stylesheet')
+    link(href="bower_components/bootstrapValidator/dist/css/bootstrapValidator.min.css" rel='stylesheet')
+    link(href="bower_components/ladda/dist/ladda-themeless.min.css" rel='stylesheet')
+    link(href="bower_components/animate.css/animate.min.css" rel='stylesheet')
+    link(href="bower_components/github-fork-ribbon-css/gh-fork-ribbon.css" rel='stylesheet')
+    //link(href="bower_components/github-fork-ribbon-css/gh-fork-ribbon/ie.css" rel='stylesheet')
+    link(href="less/app.css" rel='stylesheet')
+    link(href="less/settings-panel.css" rel='stylesheet')
+    style(type='text/css').
+      #buttonGroupForm .btn-group .form-control-feedback {
+        top: 0;
+        right: -30px;
+      }
+  
+  body(style='overflow: visible;')
+    #fb-root
+    // Main
+    div.github-fork-ribbon-wrapper.right
+      div.github-fork-ribbon
+        a(href='https://github.com/simonwhitaker/github-fork-ribbon-css') Fork me on GitHub
+    section#home.main.text-center(ng-controller="IndexCtrl")
+      .page
+        .wrapper
+          .container
+            img(src='images/logo.png', alt='Logo', width='140', height='25')
+            h1 Coming Soon
+            p
+              | 一款全新虚拟币应用&period;
+              | 让你感受虚拟币金融的力量&period;
+            .row
+              span
+                .col-sm-12
+            // Subscription form
+            form#signupForm.form-inline.signup
+              .form-group.has-feedback
+                input.form-control(type='email', name='email', ng-model="data.userEmail", placeholder='Email address', data-bv-field='email', style='cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;')
+                i.form-control-feedback(data-bv-icon-for='email', style='display: none; top: 0px;')
+                small.help-block(data-bv-validator='notEmpty', data-bv-validator-for='email', style='display: none;') 邮箱不能为空
+                small.help-block(data-bv-validator='emailAddress', data-bv-validator-for='email', style='display: none;') 邮箱地址无效
+              .form-group
+                button.btn-group.btn.btn-theme(type='submit', data-toggle="buttons", ng-click="getNotified()")
+                  span.ladda-label Get notified&excl;
+                input(type='hidden', value='')
+            footer.text-center
+              .social
+                a.jiathis_button_weixin.btn.btn-theme(href='#')
+                  i.fa.fa-weixin
+                a.btn.btn-theme.fb-share-button(title="Share on Facebook" target="_blank" onclick="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent('http://secret.bigcoor.com')+'&t='+encodeURIComponent(document.title), 'newWindow', 'width=800, height=400','center');void(0);")
+                  i.fa.fa-facebook
+                a.btn.btn-theme(href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;")
+                  i.fa.fa-google-plus
+          .arrow-down
+            a#scroll.scroll(href='http://secret.bigcoor.com/#contact')
+              i.fa.fa-angle-double-down
+    // Contact
+    section#contact.section
+      .container
+        .row
+          .col-sm-12
+            h3.section-title Join us
+            .section-title-border
+        .row
+          .col-sm-6
+            p
+              strong Bigcoor
+              | 是一款虚拟币全新应用。
+              | 我们将逐步开源项目，为整个虚拟币生态发展做些许贡献,
+              | 为互联网金融时代真正的到来准备。
+            p
+              | 如果您是虚拟币系统开发的Geek，
+              | 我们非常欢迎您加入我们的开源行列。
+              | 如果您是虚拟币的爱好者，
+              | 我们非常希望能得到你对全球虚拟币的看法以及今后的发展。
+            ul.list-contacts
+              li
+                i.fa.fa-envelope-o
+                a(href='mailto:x@bigcoor.com') x&commat;bigcoor&period;com
+          .col-sm-6
+            p
+              strong bigcoor
+              | 是一款虚拟币全新应用。
+              | 我们将逐步开源项目，为整个虚拟币生态发展做些许贡献,
+              | 为互联网金融时代真正的到来准备。
+            p
+              | 如果您是虚拟币系统开发的Geek，
+              | 我们非常欢迎您加入我们的开源行列。
+              | 如果您是虚拟币的爱好者，
+              | 我们非常希望能得到你对全球虚拟币的看法以及今后的发展。
+        
+
+    include includes/footer
+    //
+      common script
+    include includes/scripts
+    //
+      other script
