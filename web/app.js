@@ -1,24 +1,32 @@
-var express = require('express')
-  , path    = require('path')
-  , bcrypt  = require('bcrypt')
-  , app     = express()
-  , config  = require('../config');
+var express        = require('express')
+  , path           = require('path')
+  , bcrypt         = require('bcrypt')
+  , bodyParser     = require('body-parser')
+  , morgan         = require('morgan')
+  , cookieParser   = require('cookie-parser')
+  , methodOverride = require('method-override')
+  , cookieSession  = require('cookie-session')
+  , stylus         = require('stylus')
+  , serveStatic    = require('serve-static')
+  , app            = express()
+  , router         = express.Router()
+  , config         = require('../config');
 
-app.configure(function(){
+//app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
  
-  if (config.get('VERBOSE')) app.use(express.logger('dev'));
-  app.use(express.json());
-  app.use(express.urlencoded());
-  app.use(express.cookieParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieSession({secret: "qwertyuopkjsdfm", cookie: { maxAge: 1000 * 60 * 60 * 24 }}));
+  app.use(bodyParser.json());
+  app.use(morgan('dev'));
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(cookieParser());
+  app.use(methodOverride());
+  app.use(cookieSession({secret: "qwertyuopkjsdfm", cookie: { maxAge: 1000 * 60 * 60 * 24 }}));
   app.use(require('stylus').middleware(__dirname + '/public'));
-  app.use(express.static(path.join(__dirname, '/public')));
+  app.use(serveStatic(path.join(__dirname, '/public')));
 
-  app.use(app.router);
-});
+  app.use(router);
+//});
 
 // **  Bootstrap routes
 require('./routes')(app);
