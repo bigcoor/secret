@@ -3,7 +3,7 @@ html(lang="en-us", ng-app='app')
   head
     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     meta(charset="utf-8")
-    title(Bigcoor 虚拟币基金 Coming Soon)
+    title Bigcoor 虚拟币基金
     meta(nname="viewport" content="width=device-width, initial-scale=1" rel='stylesheet')
     link(href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel='stylesheet')
     link(href="bower_components/font-awesome/css/font-awesome.min.css" rel='stylesheet')
@@ -49,6 +49,8 @@ html(lang="en-us", ng-app='app')
                 button.btn-group.btn.btn-theme(type='submit', data-toggle="buttons", ng-click="getNotified()")
                   span.ladda-label Get notified&excl;
                 input(type='hidden', value='')
+              .form-group
+                i#notify-checked.fa.fa-check(style="font-size: 40px;display: none;")
             footer.text-center
               .social
                 a.jiathis_button_weixin.btn.btn-theme(href='#')
@@ -77,6 +79,7 @@ html(lang="en-us", ng-app='app')
             p
               | 如果您是虚拟币系统开发的Geek，
               | 我们非常欢迎您加入我们的开源行列。
+            p
               | 如果您是虚拟币的爱好者，
               | 我们非常希望能得到你对全球虚拟币的看法以及今后的发展。
             ul.list-contacts
@@ -92,6 +95,7 @@ html(lang="en-us", ng-app='app')
             p
               | 如果您是虚拟币系统开发的Geek，
               | 我们非常欢迎您加入我们的开源行列。
+            p
               | 如果您是虚拟币的爱好者，
               | 我们非常希望能得到你对全球虚拟币的看法以及今后的发展。
         

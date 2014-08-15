@@ -1,13 +1,7 @@
 
 var app = angular.module('app', ['angularMoment', 'ngRoute', 'frapontillo.bootstrap-switch']);
 
-var controllers = [ 
-  // {
-  //   name        : 'Index'
-  // , path        : '/'
-  // , templateUrl : 'index'
-  // , controller  : 'IndexCtrl'
-  // }
+var controllers = [
 ];
 
 app.config(['$routeProvider', function($routeProvider) {
@@ -30,9 +24,13 @@ app.config(['$routeProvider', function($routeProvider) {
 
 }]);
 
-app.controller('IndexCtrl', function($scope, $http, $location) {
+app.controller('IndexCtrl', function($scope, $http, $location, $timeout) {
   var successCallback = function(err, data) {
-    //do stuff
+    $('#notify-checked').show();
+
+    $timeout(function() {
+      $('#notify-checked').hide();
+    }, 2000);
   };
   $scope.data = {};
   $scope.getNotified = function() {
