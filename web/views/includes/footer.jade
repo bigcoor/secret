@@ -12,8 +12,6 @@ script(src='bower_components/angular-moment/angular-moment.min.js')
 script(src='bower_components/angular-route/angular-route.min.js')
 script(src='bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.min.js')
 script(src='js/init.js')
-script(src='js/emailAddress.js')
-script(src='js/settings-panel.js')
 //controllers
 script(src='js/controllers.js')
 
@@ -23,13 +21,3 @@ script(src="https://apis.google.com/js/platform.js" async defer)
 
 .backstretch(style='left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; z-index: -999999; position: fixed; width: 1262px; height: 538px;')
   img(src='images/1.jpg', style='position: absolute; margin: 0px; padding: 0px; border: none; max-height: none; max-width: none; z-index: -999999; width: 1262px; height: 842.5111999999999px; left: 0px; top: -152.25559999999996px;')
-
-//facebook share SDK
-script(type='text/javascript').
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'))

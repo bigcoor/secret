@@ -3,5 +3,5 @@ var app      = require('./web/app')
   , mongoose = require('mongoose')
   , config   = require('./config');
 
-mongoose.connect(config.get('MONGO'));
+config.get('MONGO') && mongoose.connect(config.get('MONGO'));
 server.listen(config.get('PORT'));
