@@ -1,4 +1,4 @@
 {
   "PORT"       : 3000
-, "MONGO"      : "mongodb://localhost:27017/bc_dev"
+, "MONGO"      : null
 }
